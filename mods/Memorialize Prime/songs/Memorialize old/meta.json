@@ -1,0 +1,16 @@
+{
+	"beatsPerMeasure": 4,
+	"opponentModeAllowed": true,
+	"coopAllowed": true,
+	"stepsPerBeat": 4,
+	"bpm": 200,
+	"difficulties": [
+		"hard"
+	],
+	"needsVoices": true,
+	"parsedColor": -16055859,
+	"displayName": "Memorialize",
+	"icon": "pixxeno",
+	"name": "Memorialize old",
+	"color": "#0B01CD"
+}

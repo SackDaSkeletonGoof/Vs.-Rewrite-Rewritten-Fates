@@ -1,0 +1,7 @@
+<!DOCTYPE codename-mod-credits>
+<!-- TEMPLATE FOR CUSTOM CREDITS!!! -->
+<menu name="awesome rewrite mod" desc="'im dying' - Sack while coding this">
+	<!-- \/ You can also set the portrait shader as false as you can see below in the github one -->
+	<credit name="Sack The Skeleton goof" desc="hi, i coded this shit, pls help me. oh and i also made the art for Memorialize prime along side its in game sprites, pretty cool huh?" icon="Sack" size="100" url="https://www.youtube.com/@SAckTheGoof"/>
+	<credit name="Nominal Dingus" desc="'the dingus who did the thing aka the songs- yeah- he- he made 'em' - sack coding shit at 1:05AM" size="100" icon="dingus" url="https://www.youtube.com/@NominalDingus"/>
+</menu>

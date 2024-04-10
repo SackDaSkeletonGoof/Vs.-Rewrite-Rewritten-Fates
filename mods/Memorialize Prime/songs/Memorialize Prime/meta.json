@@ -1,0 +1,16 @@
+{
+	"opponentModeAllowed": true,
+	"icon": "pixxeno",
+	"difficulties": [
+		"Hard"
+	],
+	"parsedColor": -14470507,
+	"color": "#233295",
+	"name": "Memorialize Prime",
+	"coopAllowed": true,
+	"stepsPerBeat": 4,
+	"displayName": "Memorialize Prime",
+	"beatsPerMeasure": 4,
+	"needsVoices": true,
+	"bpm": 180
+}
