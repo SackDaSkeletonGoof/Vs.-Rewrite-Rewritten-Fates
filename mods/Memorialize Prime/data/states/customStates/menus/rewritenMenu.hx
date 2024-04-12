@@ -1,3 +1,5 @@
+import funkin.editors.EditorPicker;
+
 var thing:FlxSprite;
 
 function create(){
@@ -24,4 +26,9 @@ function update(){
     if (FlxG.keys.justPressed.F){
         FlxG.switchState(new FreeplayState());
     }
+
+    if (FlxG.keys.justPressed.SEVEN) {
+		persistentUpdate = false;
+		openSubState(new EditorPicker());
+	}
 }

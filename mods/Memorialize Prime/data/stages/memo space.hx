@@ -120,16 +120,6 @@ function update(elapsed:Float){
     vhs.hset("iTime", time += elapsed);
     trip.hset("iTime", time += elapsed);
 
-    //debuging, will be removed after im done with the mod.
-    if (FlxG.keys.pressed.SIX){
-        player.cpu = true;
-        trace("SKILL ISSUE-");
-    }
-    if (FlxG.keys.pressed.FIVE){
-        player.cpu = false;
-        trace("oh, guess thats done");
-    }
-
     //for the scroll and zoom to work properly
     cam3.scroll.x = camera.scroll.x;
     cam3.scroll.y = camera.scroll.y;
