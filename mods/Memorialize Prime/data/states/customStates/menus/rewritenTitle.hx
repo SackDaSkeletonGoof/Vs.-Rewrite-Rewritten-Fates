@@ -7,6 +7,7 @@ import flixel.text.FlxTextBorderStyle;
 import funkin.backend.MusicBeatState;
 import flixel.util.FlxAxes;
 import funkin.backend.utils.DiscordUtil;
+import flixel.util.FlxTimer;
 
 function new() CoolUtil.playMenuSong();
 
@@ -54,6 +55,7 @@ function startIntro()
 
 function create(){
 
+	importScript("data/scripts/Pause");
 	importScript("data/scripts/cool VHS");
 
     window.title = "Vs. Rewrite: Rewriten Fates";
@@ -67,6 +69,8 @@ new FlxTimer().start(1, function(tmr:FlxTimer)
 		FlxG.sound.music.fadeIn(5, 0, 0.7);
 
 		textGroup = new FlxGroup();
+
+		secret = new FlxTimer();
 
 	if(skippedIntro) return;
 	titleText = new FlxSprite(100, 576);
@@ -120,6 +124,8 @@ function deleteCoolText() {
 	}
 }
 
+var secret:FlxTimer;
+
 var weewoo:Float = 0;
 function update(elapsed:Float)
 	{
@@ -135,14 +141,20 @@ function update(elapsed:Float)
 			else if (!transitioning)
 				pressEnter();
 		}
+		
 
-		if (FlxG.keys.justPressed.X){
-			trace("balls");
-			FlxG.sound.play(Paths.sound('menu/secrets/codes'), 0.5);
-			Conductor.changeBPM(0);
-			FlxG.sound.music.stop();
-			deleteCoolText();
-			new FlxTimer().start(4.0, () -> FlxG.switchState(new ModState("customStates/menus/secrets/secret")));
+		if (FlxG.keys.justPressed.X == true){
+			secret.start(4.0, () -> {
+				Conductor.changeBPM(0);
+				FlxG.sound.music.stop();
+				deleteCoolText();
+				FlxG.sound.play(Paths.sound('menu/secrets/codes'), 0.5); 
+				new FlxTimer().start(4.0, () -> FlxG.switchState(new ModState("customStates/menus/secrets/secret"))); 
+				trace("we pressing X alright");});
+
+		} else if (FlxG.keys.justReleased.X == true){
+			secret.cancel();
+			trace("oh shit, we no longer pressing X");
 		}
     }
 
