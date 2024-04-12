@@ -3,6 +3,8 @@ var thing:FlxSprite;
 function create(){
     trace("ok so, we changed into the main menu, this shit aint good enough");
 
+    importScript("data/scripts/cool VHS");
+
     thing = new FlxSprite();
 	thing.loadGraphic(Paths.image('menus/rewr'));
     thing.scale.x = 1;
@@ -18,4 +20,8 @@ function update(){
         {
             FlxG.switchState(new TitleState());
         }
+
+    if (FlxG.keys.justPressed.F){
+        FlxG.switchState(new FreeplayState());
+    }
 }

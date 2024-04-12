@@ -53,6 +53,9 @@ function startIntro()
 
 
 function create(){
+
+	importScript("data/scripts/cool VHS");
+
     window.title = "Vs. Rewrite: Rewriten Fates";
 new FlxTimer().start(1, function(tmr:FlxTimer)
 		{
@@ -117,7 +120,6 @@ function deleteCoolText() {
 	}
 }
 
-
 var weewoo:Float = 0;
 function update(elapsed:Float)
 	{
@@ -132,6 +134,15 @@ function update(elapsed:Float)
 				skipIntro();
 			else if (!transitioning)
 				pressEnter();
+		}
+
+		if (FlxG.keys.justPressed.X){
+			trace("balls");
+			FlxG.sound.play(Paths.sound('menu/secrets/codes'), 0.5);
+			Conductor.changeBPM(0);
+			FlxG.sound.music.stop();
+			deleteCoolText();
+			new FlxTimer().start(4.0, () -> FlxG.switchState(new ModState("customStates/menus/secrets/secret")));
 		}
     }
 
@@ -159,45 +170,26 @@ function update(elapsed:Float)
 
 	function beatHit(curBeat:Int) {
 	
-		FlxTween.tween(FlxG.camera, {zoom: 1.04}, 0.7, {ease: FlxEase.quadOut, type: FlxTween.BACKWARD});
+		FlxTween.tween(FlxG.camera, {zoom: 1.04}, 1, {ease: FlxEase.quadOut, type: FlxTween.BACKWARD});
 	
 		if(skippedIntro) return;
 		switch (curBeat)
 		{
-			case 2: createCoolText(["FNF' Gorefield Team"]);
-			case 4: addMoreText('Present');
-			case 5: deleteCoolText();
-			case 6: createCoolText(['In not association', 'with'], -40);
-			case 8: addMoreText('newgrounds', -40); ngSpr.visible = true;
-			case 9: deleteCoolText(); ngSpr.visible = false;
-			case 10: createCoolText(["Dathree was here"]);
-			case 12: addMoreText("'Dathree'");
-			case 13: deleteCoolText();
-			case 14: createCoolText(["number one small arctic fox"]);
-			case 15: addMoreText("'Lean'");
-			case 16: deleteCoolText();
-			case 17: createCoolText(["Gorefield for you BB"]);
-			case 18: addMoreText("'Nex_s'");
-			case 19: deleteCoolText();
-			case 20: createCoolText(["Jon I require enchiladas"]);
-			case 21: addMoreText("'Bitfox'");
-			case 22: deleteCoolText();
-			case 23: createCoolText(["Fifa 24"]);
-			case 24: addMoreText("'Jloor'");
-			case 25: deleteCoolText();
-			case 26: createCoolText(["JLoorcito fiu fiu"]);
-			case 27: addMoreText("'Zero'");
-			case 28: deleteCoolText();
-			case 29: createCoolText(["the worst fnf mod"]);
-			case 30: addMoreText("'Keneth'");
-			case 31: deleteCoolText();
-			case 32: addMoreText("FNF'");
-			case 33: addMoreText('Vs Gorefield');
-			case 34: addMoreText('Part II'); // Hawaii Part II reference? -EstoyAburridow
-			case 35:
-				if(!FlxG.random.bool(10)) return;
-				deleteCoolText();
-				wiggleGorefield.visible = true;
-			case 36: skipIntro();
+			case 1: createCoolText(["Rewriten Fates Team"]);
+			case 2: addMoreText('Present');
+			case 3: deleteCoolText();
+			case 4: createCoolText(['In not association', 'with'], -40);
+			case 5: addMoreText('Nominal Dingus and Newgrounds', -40);
+			case 6: deleteCoolText();
+			case 7: createCoolText(["I AM IN SO MUCH PAIN"]);
+			case 8: addMoreText("'Sack while coding this'");
+			case 9: deleteCoolText();
+			case 10: createCoolText(["pls send help"]);
+			case 11: deleteCoolText();
+			case 12: addMoreText("FNF'");
+			case 13: addMoreText('Vs Rewrite:');
+			case 14: addMoreText('Rewriten Fates'); // Hawaii Part II reference? -EstoyAburridow
+			case 15: deleteCoolText();
+			case 16: skipIntro();
 		}
 	}

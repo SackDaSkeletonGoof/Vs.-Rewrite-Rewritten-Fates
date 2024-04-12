@@ -1,53 +1,31 @@
-import funkin.game.HudCamera;
-import funkin.backend.scripting.events.NoteHitEvent;
+var char:Int = 0;
+var amogus = 'false';
+var sus = 'false';
+var baka = 'false';
 
-public var sufferNotesForBF = false;
-public var sufferNotesForDad = false;
-public var enablePauseMenu = true;
+function update(elapsed:Float) {
+    var controls = FlxG.keys.justPressed;
+    var pressed = false;
+
+    if (pressed = controls.R)  {
+		amogus = true;
+    }
 
 
-/**
- * UI
- */
-function onNoteCreation(event) {
-	if (event.note.strumLine == playerStrums && !sufferNotesForBF) return;
-	if (event.note.strumLine == cpuStrums && !sufferNotesForDad) return;
-
-	event.cancel();
-
-	var note = event.note;
-	if (event.note.isSustainNote) {
-		note.loadGraphic(Paths.image('stages/bobux/ui/notes/US note'), true, 20, 10);
-		note.animation.add("hold", [event.strumID]);
-		note.animation.add("holdend", [4 + event.strumID]);
-	} else {
-		note.loadGraphic(Paths.image('stages/bobux/ui/notes/US note'), true, 100, 100);
-		note.animation.add('scroll', [4]);
-	}
-}
-
-function onStrumCreation(event) {
-	if (event.player == 1 && !sufferNotesForBF) return;
-	if (event.player == 0 && !sufferNotesForDad) return;
-
-	event.cancel();
-
-	var strum = event.strum;
-	strum.loadGraphic(Paths.image('stages/bobux/ui/notes/US note'), true, 100, 100);
-	strum.animation.add("static", [event.strumID]);
-	strum.animation.add("pressed", [4 + event.strumID, 8 + event.strumID], 12, false);
-	strum.animation.add("confirm", [12 + event.strumID, 16 + event.strumID], 24, false);
-}
-
-function onCountdown(event) {
-	event.spritePath = switch(event.swagCounter) {
-		case 0: null;
-		case 1: 'stages/bobux/ui/ready';
-		case 2: 'stages/bobux/ui/set';
-		case 3: 'stages/bobux/ui/go';
-	};
-}
-
-function onPlayerHit(event:NoteHitEvent) {
-	event.ratingPrefix = "stages/bobux/ui/";
+    if (amogus == 'true') {
+        if (char == 0) pressed = controls.E;
+        if (char == 1) pressed = controls.W;
+        if (char == 2) pressed = controls.R;
+        if (pressed) {
+            char++;
+        } else {
+            if (controls.ANY) {
+                char = 0;
+            }
+        }
+        if (char >= 3) {
+            PlayState.loadSong("Memorialize Prime", "hard");
+			FlxG.switchState(new PlayState());
+        }   
+    }
 }
