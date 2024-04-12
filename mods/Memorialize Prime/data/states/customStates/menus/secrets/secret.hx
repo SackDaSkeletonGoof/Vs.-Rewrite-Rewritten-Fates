@@ -10,7 +10,7 @@ function create(){
     trace("if any one sees this. dw bout it, i was just messing around with the mod");
 
     var textShit = new FlxText(0, 200, FlxG.width, "there is nothing here.\n\nPress ESC to get back to the title screen :)", 19, true);
-	textShit.setFormat("fonts/sonic.ttf", 60, FlxColor.WHITE, "center", FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+	textShit.setFormat("fonts/sonic.ttf", 30, FlxColor.WHITE, "center", FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 	textShit.scrollFactor.set();
 	textShit.screenCenter(FlxAxes.X);
 	add(textShit);
