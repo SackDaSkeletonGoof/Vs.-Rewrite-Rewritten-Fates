@@ -9,6 +9,12 @@ import flixel.util.FlxAxes;
 import funkin.backend.utils.DiscordUtil;
 import flixel.util.FlxTimer;
 
+/* aight so uhhhhhhhh, there is a lot of shitty code in here.
+pls fix it if you can because i honestly dont know what im doing
+
+	- sack
+*/
+
 function new() CoolUtil.playMenuSong();
 
 static var initialized:Bool = false;
