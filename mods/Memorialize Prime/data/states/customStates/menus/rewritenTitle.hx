@@ -25,6 +25,7 @@ var skippedIntro:Bool = false;
 
 	function skipIntro():Void
 	{
+		thing.visible = true;
 		if (!skippedIntro)
 		{
 			remove(ngSpr);
@@ -32,28 +33,45 @@ var skippedIntro:Bool = false;
 			remove(blackScreen);
 			FlxG.camera.flash(FlxColor.WHITE, 2);
 			skippedIntro = true;
-			thing.alpha = 1;
+			thing.visible = true;
+			thing.animation.play('no');
+		}
+	}
+	
+
+	function didSkipIntro(){
+		if (skippedIntro){
+			FlxG.sound.music.stop();
+			jingle.play();
 		}
 	}
 function startIntro()
 	{
-		Conductor.changeBPM(60);
+		Conductor.changeBPM(125);
 		persistentUpdate = true;
 
 		thing = new FlxSprite();
-		thing.loadGraphic(Paths.image('menus/titlepog'));
-    	thing.scale.x = 1;
-    	thing.scale.y = 1;
-		thing.screenCenter(FlxAxes.X);
-		thing.y = 100;
-		thing.alpha = 0;
+		thing.frames = Paths.getSparrowAtlas('menus/title');
+		thing.animation.addByPrefix('no', 'rewrTitle', 24, true);
+		thing.scale.set(1.3, 1.3);
+		thing.x = 15;
+		thing.y = -25;
+		thing.updateHitbox();
 		thing.cameras = [camera];
-    	thing.scrollFactor.set(0, 0);
-    	add(thing);
+		thing.antialiasing = false;
+
+		if (!initialized)
+			CoolUtil.playMenuSong(true);
 	}
 
 
 function create(){
+
+	thing = new FlxSprite();
+	thing.visible = false;
+	add(thing);
+
+	trans = new FlxTimer();
 
 	importScript("data/scripts/Pause");
 	importScript("data/scripts/cool VHS");
@@ -64,7 +82,7 @@ new FlxTimer().start(1, function(tmr:FlxTimer)
 			startIntro();
 		});
 
-		FlxG.sound.playMusic(Paths.music('hills'), 0);
+		FlxG.sound.playMusic(Paths.music('RF - title screen'), 0);
 
 		FlxG.sound.music.fadeIn(5, 0, 0.7);
 
@@ -126,6 +144,10 @@ function deleteCoolText() {
 
 var secret:FlxTimer;
 
+var jingle = FlxG.sound(Paths.sound('menu/skip-Intro'));
+
+var trans:FlxTimer;
+
 var weewoo:Float = 0;
 function update(elapsed:Float)
 	{
@@ -141,12 +163,28 @@ function update(elapsed:Float)
 			else if (!transitioning)
 				pressEnter();
 		}
+
+		if (pressedEnter && skippedIntro){
+			didSkipIntro();
+		} else if (thing.visible == true && pressedEnter){
+			pressEnter();
+			trans.cancel();
+			trans.start(2, () -> {FlxG.switchState(new MainMenuState()); FlxG.sound.music.stop();});
+		}
 		
 
 		if (FlxG.keys.justPressed.X == true){
 			secret.start(4.0, () -> {
 				Conductor.changeBPM(0);
 				FlxG.sound.music.stop();
+				if (thing.visible = true){
+					thing.visible = false;
+				}
+				if (titleText.visible = true){
+					titleText.visible = false;
+				}
+				jingle.stop();
+
 				deleteCoolText();
 				FlxG.sound.play(Paths.sound('menu/secrets/codes'), 0.5); 
 				new FlxTimer().start(4.0, () -> FlxG.switchState(new ModState("customStates/menus/secrets/secret"))); 
@@ -162,11 +200,10 @@ function update(elapsed:Float)
 		titleText.animation.play('press',true);
 	
 		FlxG.camera.flash(FlxColor.WHITE, 1);
-		FlxG.sound.play(Paths.sound('menu/confirm'), 1);
+		FlxG.sound.play(Paths.sound('menu/sonicConfirm'), 1);
 	
 		transitioning = true;
-		// FlxG.sound.music.stop();
-		new FlxTimer().start(2.0, () -> FlxG.switchState(new MainMenuState()));
+		trans.start(8.0, () -> {FlxG.switchState(new MainMenuState()); FlxG.sound.music.stop();});
 	}
 
 	function getIntroTextShit():Array<Array<String>> {
@@ -182,7 +219,7 @@ function update(elapsed:Float)
 
 	function beatHit(curBeat:Int) {
 	
-		FlxTween.tween(FlxG.camera, {zoom: 1.04}, 1, {ease: FlxEase.quadOut, type: FlxTween.BACKWARD});
+		FlxTween.tween(FlxG.camera, {zoom: 1.10}, 0.5, {ease: FlxEase.quadOut, type: FlxTween.BACKWARD});
 	
 		if(skippedIntro) return;
 		switch (curBeat)
@@ -190,18 +227,16 @@ function update(elapsed:Float)
 			case 1: createCoolText(["Rewriten Fates Team"]);
 			case 2: addMoreText('Present');
 			case 3: deleteCoolText();
-			case 4: createCoolText(['In not association', 'with'], -40);
-			case 5: addMoreText('Nominal Dingus and Newgrounds', -40);
-			case 6: deleteCoolText();
-			case 7: createCoolText(["I AM IN SO MUCH PAIN"]);
-			case 8: addMoreText("'Sack while coding this'");
-			case 9: deleteCoolText();
-			case 10: createCoolText(["pls send help"]);
-			case 11: deleteCoolText();
-			case 12: addMoreText("FNF'");
-			case 13: addMoreText('Vs Rewrite:');
-			case 14: addMoreText('Rewriten Fates'); // Hawaii Part II reference? -EstoyAburridow
+			case 5: createCoolText(['In not association', 'with'], -40);
+			case 6: addMoreText('Nominal Dingus and Newgrounds', -40);
+			case 7: deleteCoolText();
+			case 8: createCoolText(["I AM IN SO MUCH PAIN"]);
+			case 9: addMoreText("'Sack while coding this'");
+			case 10: deleteCoolText();
+			case 11: createCoolText(["pls send help"]);
 			case 15: deleteCoolText();
-			case 16: skipIntro();
+			case 16: addMoreText("FNF'"); addMoreText('Vs Rewrite:');
+			case 17: addMoreText('Rewriten Fates'); // Hawaii Part II reference? -EstoyAburridow
+			case 18: deleteCoolText(); skipIntro();
 		}
 	}

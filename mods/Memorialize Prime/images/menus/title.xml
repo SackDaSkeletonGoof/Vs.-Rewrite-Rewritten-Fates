@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="title.png">
+	<!-- Created with Adobe Animate version 23.0.1.70 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="rewrTitle0000" x="100" y="100" width="961" height="540"/>
+	<SubTexture name="rewrTitle0001" x="1068" y="100" width="961" height="540"/>
+	<SubTexture name="rewrTitle0002" x="2036" y="100" width="961" height="540"/>
+	<SubTexture name="rewrTitle0003" x="3004" y="100" width="961" height="540"/>
+	<SubTexture name="rewrTitle0004" x="3972" y="100" width="961" height="540"/>
+	<SubTexture name="rewrTitle0005" x="4940" y="100" width="961" height="540"/>
+	<SubTexture name="rewrTitle0006" x="5908" y="100" width="961" height="540"/>
+	<SubTexture name="rewrTitle0007" x="6876" y="100" width="961" height="540"/>
+	<SubTexture name="rewrTitle0008" x="100" y="647" width="961" height="540"/>
+	<SubTexture name="rewrTitle0009" x="1068" y="647" width="961" height="540"/>
+	<SubTexture name="rewrTitle0010" x="2036" y="647" width="961" height="540"/>
+	<SubTexture name="rewrTitle0011" x="3004" y="647" width="961" height="540"/>
+	<SubTexture name="rewrTitle0012" x="3972" y="647" width="961" height="540"/>
+	<SubTexture name="rewrTitle0013" x="4940" y="647" width="961" height="540"/>
+	<SubTexture name="rewrTitle0014" x="5908" y="647" width="961" height="540"/>
+	<SubTexture name="rewrTitle0015" x="6876" y="647" width="961" height="540"/>
+	<SubTexture name="rewrTitle0016" x="100" y="1194" width="961" height="540"/>
+	<SubTexture name="rewrTitle0017" x="1068" y="1194" width="961" height="540"/>
+	<SubTexture name="rewrTitle0018" x="2036" y="1194" width="961" height="540"/>
+	<SubTexture name="rewrTitle0019" x="3004" y="1194" width="961" height="540"/>
+	<SubTexture name="rewrTitle0020" x="3972" y="1194" width="961" height="540"/>
+	<SubTexture name="rewrTitle0021" x="4940" y="1194" width="961" height="540"/>
+	<SubTexture name="rewrTitle0022" x="5908" y="1194" width="961" height="540"/>
+	<SubTexture name="rewrTitle0023" x="6876" y="1194" width="961" height="540"/>
+	<SubTexture name="rewrTitle0024" x="100" y="1741" width="961" height="540"/>
+	<SubTexture name="rewrTitle0025" x="1068" y="1741" width="961" height="540"/>
+	<SubTexture name="rewrTitle0026" x="2036" y="1741" width="961" height="540"/>
+	<SubTexture name="rewrTitle0027" x="3004" y="1741" width="961" height="540"/>
+	<SubTexture name="rewrTitle0028" x="3972" y="1741" width="961" height="540"/>
+	<SubTexture name="rewrTitle0029" x="4940" y="1741" width="961" height="540"/>
+	<SubTexture name="rewrTitle0030" x="5908" y="1741" width="961" height="540"/>
+</TextureAtlas>
