@@ -31,7 +31,6 @@ var skippedIntro:Bool = false;
 
 	function skipIntro():Void
 	{
-		thing.visible = true;
 		if (!skippedIntro)
 		{
 			remove(ngSpr);
@@ -39,7 +38,7 @@ var skippedIntro:Bool = false;
 			remove(blackScreen);
 			FlxG.camera.flash(FlxColor.WHITE, 2);
 			skippedIntro = true;
-			thing.visible = true;
+			thing.alpha = 1;
 			thing.animation.play('no');
 		}
 	}
@@ -48,7 +47,7 @@ var skippedIntro:Bool = false;
 	function didSkipIntro(){
 		if (skippedIntro){
 			FlxG.sound.music.stop();
-			jingle.play();
+			FlxG.sound.play(Paths.sounds('skip-Intro'), 0);
 		}
 	}
 function startIntro()
@@ -63,8 +62,10 @@ function startIntro()
 		thing.x = 15;
 		thing.y = -25;
 		thing.updateHitbox();
+		thing.alpha = 0;
 		thing.cameras = [camera];
 		thing.antialiasing = false;
+		add(thing);
 
 		if (!initialized)
 			CoolUtil.playMenuSong(true);
@@ -74,8 +75,6 @@ function startIntro()
 function create(){
 
 	thing = new FlxSprite();
-	thing.visible = false;
-	add(thing);
 
 	trans = new FlxTimer();
 
@@ -88,7 +87,7 @@ new FlxTimer().start(1, function(tmr:FlxTimer)
 			startIntro();
 		});
 
-		FlxG.sound.playMusic(Paths.music('RF - title screen'), 0);
+		FlxG.sound.playMusic(Paths.music('RF - title screen'), 1);
 
 		FlxG.sound.music.fadeIn(5, 0, 0.7);
 
@@ -150,8 +149,6 @@ function deleteCoolText() {
 
 var secret:FlxTimer;
 
-var jingle = FlxG.sound(Paths.sound('menu/skip-Intro'));
-
 var trans:FlxTimer;
 
 var weewoo:Float = 0;
@@ -169,28 +166,20 @@ function update(elapsed:Float)
 			else if (!transitioning)
 				pressEnter();
 		}
-
+/*
 		if (pressedEnter && skippedIntro){
 			didSkipIntro();
 		} else if (thing.visible == true && pressedEnter){
 			pressEnter();
 			trans.cancel();
 			trans.start(2, () -> {FlxG.switchState(new MainMenuState()); FlxG.sound.music.stop();});
-		}
+		}*/
 		
 
 		if (FlxG.keys.justPressed.X == true){
 			secret.start(4.0, () -> {
 				Conductor.changeBPM(0);
 				FlxG.sound.music.stop();
-				if (thing.visible = true){
-					thing.visible = false;
-				}
-				if (titleText.visible = true){
-					titleText.visible = false;
-				}
-				jingle.stop();
-
 				deleteCoolText();
 				FlxG.sound.play(Paths.sound('menu/secrets/codes'), 0.5); 
 				new FlxTimer().start(4.0, () -> FlxG.switchState(new ModState("customStates/menus/secrets/secret"))); 
@@ -209,7 +198,7 @@ function update(elapsed:Float)
 		FlxG.sound.play(Paths.sound('menu/sonicConfirm'), 1);
 	
 		transitioning = true;
-		trans.start(8.0, () -> {FlxG.switchState(new MainMenuState()); FlxG.sound.music.stop();});
+		trans.start(2.0, () -> {FlxG.switchState(new MainMenuState()); FlxG.sound.music.stop();});
 	}
 
 	function getIntroTextShit():Array<Array<String>> {

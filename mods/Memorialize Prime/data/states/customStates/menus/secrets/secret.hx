@@ -6,6 +6,8 @@ var textShit:FlxText;
 var thing:FlxSprite;
 
 function create(){
+
+    FlxG.sound.playMusic(Paths.music('untitled'), 1);
     importScript("data/scripts/cool VHS");
     trace("if any one sees this. dw bout it, i was just messing around with the mod");
 
