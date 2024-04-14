@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="main_menu.png">
+<SubTexture name="main_menu credits0000" x="0" y="0" width="600" height="300" frameX="0" frameY="0" frameWidth="600" frameHeight="300" />
+<SubTexture name="main_menu freeplay0000" x="0" y="300" width="600" height="300" frameX="0" frameY="0" frameWidth="600" frameHeight="300" />
+</TextureAtlas>
