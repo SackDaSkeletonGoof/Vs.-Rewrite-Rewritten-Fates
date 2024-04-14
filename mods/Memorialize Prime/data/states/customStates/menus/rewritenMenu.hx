@@ -12,16 +12,18 @@ var thing:FlxSprite;
 var xval:Int = 200;
 
 function create(){
+    FlxG.sound.music.stop();
     trace("ok so, we changed into the main menu, this shit aint good enough");
 
-    //importScript("data/scripts/cool VHS");
+
+    importScript("data/scripts/cool VHS");
 
 
     add(menuItems);
     for (i in 0...optionShit.length)
     {
     var tex = Paths.getSparrowAtlas('menus/main_menu');   
-    var menuItem:FlxSprite = new FlxSprite(xval, 40 + (i * 340));			
+    var menuItem:FlxSprite = new FlxSprite(xval, 40 + (i * 340));	
     if (i % 2 == 0) menuItem.x -= -200 + i * 400;
 
     menuItem.frames = tex;
@@ -30,7 +32,7 @@ function create(){
     menuItem.ID = i;
     menuItems.add(menuItem);
     menuItem.scrollFactor.set();
-    menuItem.antialiasing = true;
+    menuItem.antialiasing = false;
     }
 }
 
@@ -62,7 +64,7 @@ function update(){
 
             {
                 selectedSomethin = true;
-                FlxG.sound.play(Paths.sound('confirmMenu'));
+                FlxG.sound.play(Paths.sound('menu/'));
                 
                 if (FlxG.save.data.flashing)
                     FlxFlicker.flicker(bgdesat, 1.1, 0.15, false);

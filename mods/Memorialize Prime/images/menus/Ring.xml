@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Ring.png">
+	<!-- Created with Adobe Animate version 23.0.1.70 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="ring_spin0000" x="100" y="100" width="128" height="128"/>
+	<SubTexture name="ring_spin0001" x="274" y="100" width="128" height="128"/>
+	<SubTexture name="ring_spin0002" x="448" y="100" width="128" height="128"/>
+	<SubTexture name="ring_spin0003" x="622" y="100" width="128" height="128"/>
+	<SubTexture name="ring_spin0004" x="796" y="100" width="128" height="128"/>
+	<SubTexture name="ring_spin0005" x="100" y="274" width="128" height="128"/>
+	<SubTexture name="ring_spin0006" x="274" y="274" width="128" height="128"/>
+	<SubTexture name="ring_spin0007" x="448" y="274" width="128" height="128"/>
+	<SubTexture name="ring_spin0008" x="622" y="274" width="128" height="128"/>
+	<SubTexture name="ring_spin0009" x="796" y="274" width="128" height="128"/>
+	<SubTexture name="ring_spin0010" x="100" y="448" width="128" height="128"/>
+	<SubTexture name="ring_spin0011" x="274" y="448" width="128" height="128"/>
+	<SubTexture name="ring_spin0012" x="448" y="448" width="128" height="128"/>
+	<SubTexture name="ring_spin0013" x="622" y="448" width="128" height="128"/>
+	<SubTexture name="ring_spin0014" x="796" y="448" width="128" height="128"/>
+	<SubTexture name="ring_spin0015" x="100" y="622" width="128" height="128"/>
+	<SubTexture name="ring_spin0016" x="274" y="622" width="128" height="128"/>
+	<SubTexture name="ring_spin0017" x="448" y="622" width="128" height="128"/>
+	<SubTexture name="ring_spin0018" x="622" y="622" width="128" height="128"/>
+	<SubTexture name="ring_spin0019" x="796" y="622" width="128" height="128"/>
+	<SubTexture name="ring_spin0020" x="100" y="796" width="128" height="128"/>
+	<SubTexture name="ring_spin0021" x="274" y="796" width="128" height="128"/>
+	<SubTexture name="ring_spin0022" x="448" y="796" width="128" height="128"/>
+</TextureAtlas>
