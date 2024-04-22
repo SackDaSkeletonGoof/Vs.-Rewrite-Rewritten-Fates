@@ -14,13 +14,7 @@ var balls:FlxSprite;
 var beb:FlxSprite;
 
 //this is the shader variable list.
-var lq = new CustomShader("lowquality");
-var vhs = new CustomShader("hotlineVHS");
-var tv = new CustomShader("vcr with no glitch");
 var trip = new CustomShader("idk");
-var filter = new ShaderFilter(vhs);
-var filter2 = new ShaderFilter(tv);
-var filter3 = new ShaderFilter(lq);
 
 var myArray = ["uuuuuhhhhh", "have you ever did     but then you      so you didnt do     ?", "good thing that there is old code to reuse", "HEY, GO CHECK MY CHANNEL. use the credits thing to do that - Sack", "i have no idea if this will work", "memorialize is a cool song", "there are far too many phrases here.", "guh- *explodes*", "im inside your walls :)"];
 
@@ -34,15 +28,6 @@ function onSubstateClose() window.title = "Now enjoying: " + SONG.meta.name + " 
 
 function create(){
     boyfriend.visible = false;
-
-
-    //creates the shader thingies for the thing to work. amazing explanation ik.
-    if (FlxG.game._filters == null)
-        FlxG.game._filters = [];
-    FlxG.game._filters = [filter, filter2, filter3];
-    vhs.hset("iTime", 0);
-    trip.hset("iTime", 0);
-    
     
     
     //for any song that you want to have
@@ -82,7 +67,7 @@ function black(){
 
 function shaderfuk(){
     balls = new FlxSprite(220, 100);
-    balls.loadGraphic(Paths.image('testing/shade'));
+    balls.loadGraphic(Paths.image('testing/unused files/shade'));
     balls.scale.x = 1;
     balls.scale.y = 1;
     balls.scrollFactor.set(0.4, 0.4);
@@ -99,13 +84,19 @@ function black2(){
 
 //change the camera of the hud elements and other things.
 function postCreate() {
-    for(s in strumLines.members[0]) {
+    for(s in strumLines.members[1]) {
         s.cameras = [cam2];
+        playerStrums.members[0].x = 225;
+        playerStrums.members[1].x = 350;
+        playerStrums.members[2].x = 800;
+        playerStrums.members[3].x = 925;
     }
-    for (s in strumLines.members[1]) {
-        s.cameras = [cam2];
-        s.visible = false;
+
+    for(e in strumLines.members[0]){
+        e.visible = false;
     }
+
+
 
     dad.cameras = [cam3];
     bleck.cameras = [cam4];
@@ -113,18 +104,11 @@ function postCreate() {
 
     window.title = "Now enjoying: " + SONG.meta.name + " By Nominal Dingus";
 }
-
 var time:Float = 0;
 function update(elapsed:Float){
-    if (Playstate.instance.curSong == "Memorialize Prime"){
-        window.setIcon(Image.fromBytes(Assets.getBytes(Paths.image('testing/sex'))));
-        trace("uhhh yeah, we playin memorialize");
-    }
+    trip.hset("iTime", time += elapsed);
 
     for (i in [missesTxt, accuracyTxt, scoreTxt, healthBar,healthBarBG, iconP2, iconP1]) i.visible = false;
-
-    vhs.hset("iTime", time += elapsed);
-    trip.hset("iTime", time += elapsed);
 
     //for the scroll and zoom to work properly
     cam3.scroll.x = camera.scroll.x;
@@ -178,6 +162,5 @@ function fuk(){
 
     var v = FlxG.random.int(30,30);
     var h = FlxG.random.int(30,30);
-    vhs.iResolution = [v, h];
     FlxG.cameras.shake(0.03, 0.2);
 }

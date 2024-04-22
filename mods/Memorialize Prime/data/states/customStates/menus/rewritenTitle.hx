@@ -88,8 +88,6 @@ new FlxTimer().start(1, function(tmr:FlxTimer)
 
 		FlxG.sound.playMusic(Paths.music('RF - title screen'), 1);
 
-		FlxG.sound.music.fadeIn(5, 0, 0.7);
-
 		textGroup = new FlxGroup();
 
 		secret = new FlxTimer();

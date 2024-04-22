@@ -11,7 +11,7 @@ function create(){
     importScript("data/scripts/cool VHS");
     sega = new FlxTimer();
 
-
+    window.title = "Vs. Rewrite: Rewriten Fates - starting up, sit tight!";
     bleck = new FlxSprite();
     bleck.makeSolid(1080 * 10, 1920 * 10, 0xFFFFFFFF);
     bleck.offset.set(0, 0);
