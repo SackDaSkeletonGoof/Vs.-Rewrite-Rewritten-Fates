@@ -78,7 +78,6 @@ function create(){
 
 	trans = new FlxTimer();
 
-	importScript("data/scripts/Pause");
 	importScript("data/scripts/cool VHS");
 
     window.title = "Vs. Rewrite: Rewriten Fates";

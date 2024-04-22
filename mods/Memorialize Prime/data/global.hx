@@ -13,11 +13,6 @@ function update(elapsed) {
 
 function create(){
     window.setIcon(Image.fromBytes(Assets.getBytes(Paths.image('testing/ringy'))));
-
-    if (Playstate.instance.curSong == "Memorialize Prime"){
-        window.setIcon(Image.fromBytes(Assets.getBytes(Paths.image('testing/sex'))));
-        trace("uhhh yeah, we playin memorialize");
-    }
 }
 
 static var initialized:Bool = false;

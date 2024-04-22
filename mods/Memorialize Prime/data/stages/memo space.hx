@@ -104,6 +104,7 @@ function postCreate() {
     }
     for (s in strumLines.members[1]) {
         s.cameras = [cam2];
+        s.visible = false;
     }
 
     dad.cameras = [cam3];
@@ -115,6 +116,11 @@ function postCreate() {
 
 var time:Float = 0;
 function update(elapsed:Float){
+    if (Playstate.instance.curSong == "Memorialize Prime"){
+        window.setIcon(Image.fromBytes(Assets.getBytes(Paths.image('testing/sex'))));
+        trace("uhhh yeah, we playin memorialize");
+    }
+
     for (i in [missesTxt, accuracyTxt, scoreTxt, healthBar,healthBarBG, iconP2, iconP1]) i.visible = false;
 
     vhs.hset("iTime", time += elapsed);
