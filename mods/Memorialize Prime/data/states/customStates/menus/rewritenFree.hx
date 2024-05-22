@@ -15,7 +15,9 @@ function create(){
     FlxG.sound.playMusic(Paths.music('untitled'), 1);
     trace("if any one sees this. dw bout it, i was just messing around with the mod");
 
-    var textShit = new FlxText(0, 200, FlxG.width, "there is nothing here.\n\nPress ESC to get back to the title screen :)", 14, true);
+    new FlxTimer().start(4.0, () -> goToGame()); 
+
+    var textShit = new FlxText(0, 200, FlxG.width, "Loading, please wait a bit :)", 14, true);
 	textShit.setFormat("fonts/sonic.ttf", 20, FlxColor.WHITE, "center", FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 	textShit.scrollFactor.set();
     textShit.y = 100;
@@ -32,8 +34,7 @@ function create(){
 	add(thing);
 }
 
-function update(){
-    if(FlxG.keys.justPressed.ESCAPE){
-        FlxG.switchState(new TitleState());
-    }
+function goToGame(){
+    FlxG.switchState(new PlayState());
+    PlayState.loadSong("Memorialize Prime", "hard");
 }

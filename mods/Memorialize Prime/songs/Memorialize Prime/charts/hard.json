@@ -4351,7 +4351,7 @@
 			"time": 210666.666666667
 		}
 	],
-	"scrollSpeed": 2.3,
+	"scrollSpeed": 2,
 	"strumLines": [
 		{
 			"notes": [
@@ -5724,19 +5724,19 @@
 					"type": 0
 				}
 			],
+			"position": "dad",
+			"strumScale": 1,
 			"visible": true,
+			"type": 0,
+			"characters": [
+				"REWRITE PRIME finalized"
+			],
 			"strumPos": [
 				0,
 				50
 			],
-			"position": "dad",
-			"strumScale": 1,
-			"vocalsSuffix": "",
 			"strumLinePos": 0.25,
-			"type": 0,
-			"characters": [
-				"REWRITE PRIME finalized"
-			]
+			"vocalsSuffix": ""
 		},
 		{
 			"notes": [
@@ -7055,19 +7055,19 @@
 					"type": 0
 				}
 			],
-			"position": "boyfriend",
-			"strumScale": 1,
 			"visible": true,
-			"type": 1,
-			"characters": [
-				"boofe"
-			],
 			"strumPos": [
 				0,
 				50
 			],
+			"position": "boyfriend",
+			"strumScale": 0.6,
+			"vocalsSuffix": "",
 			"strumLinePos": 0.75,
-			"vocalsSuffix": null
+			"type": 1,
+			"characters": [
+				"boofe"
+			]
 		}
 	],
 	"codenameChart": true,

@@ -1,6 +1,9 @@
 import openfl.filters.ShaderFilter;
 import flixel.FlxCamera;
 
+FlxG.resizeGame(320, 240);
+FlxG.scaleMode.width = 640;
+FlxG.scaleMode.height = 480;
 
 //cameras. quite easy to understand.
 var cam1 = null;
@@ -15,6 +18,12 @@ var beb:FlxSprite;
 
 //this is the shader variable list.
 var trip = new CustomShader("idk");
+var lq = new CustomShader("lowquality");
+var vhs = new CustomShader("mosaic");
+var tv = new CustomShader("vcr with no glitch");
+var filter = new ShaderFilter(vhs);
+var filter2 = new ShaderFilter(tv);
+var filter3 = new ShaderFilter(lq);
 
 var myArray = ["uuuuuhhhhh", "have you ever did     but then you      so you didnt do     ?", "good thing that there is old code to reuse", "HEY, GO CHECK MY CHANNEL. use the credits thing to do that - Sack", "i have no idea if this will work", "memorialize is a cool song", "there are far too many phrases here.", "guh- *explodes*", "im inside your walls :)"];
 
@@ -28,8 +37,21 @@ function onSubstateClose() window.title = "Now enjoying: " + SONG.meta.name + " 
 
 function create(){
     boyfriend.visible = false;
-    
-    
+    lq.chromaticAberration = 0;
+
+    dad.scale.x = 0.5;
+    dad.scale.y = 0.5;
+
+    dad.x = 2020;
+    dad.y = 0;
+
+        //creates the shader thingies for the thing to work. amazing explanation ik.
+        if (FlxG.game._filters == null)
+            FlxG.game._filters = [];
+        FlxG.game._filters = [filter, filter2, filter3];
+        //vhs.hset("iTime", 0);
+        vhs.uBlocksize = [2, 2];
+
     //for any song that you want to have
     //a fade into the game you can do a thing like this.
     black();
@@ -37,8 +59,8 @@ function create(){
     shaderfuk();
     black2();
     camGame.addShader(trip);
-    camGame.alpha = 0;
-    beb.alpha = 0;
+    camGame.alpha = 1;
+    beb.alpha = 1;
 
     //creates the cameras so they work.
     FlxG.cameras.add(cam1 = new HudCamera(), false);
@@ -86,11 +108,19 @@ function black2(){
 function postCreate() {
     for(s in strumLines.members[1]) {
         s.cameras = [cam2];
-        playerStrums.members[0].x = 225;
-        playerStrums.members[1].x = 350;
-        playerStrums.members[2].x = 800;
-        playerStrums.members[3].x = 925;
+        playerStrums.members[0].x = 90;
+        playerStrums.members[1].x = 170;
+        playerStrums.members[2].x = 390;
+        playerStrums.members[3].x = 460;
     }
+    
+    var nen = 10;
+    
+    playerStrums.members[0].y = nen;
+    playerStrums.members[1].y = nen;
+    playerStrums.members[2].y = nen;
+    playerStrums.members[3].y = nen;
+
 
     for(e in strumLines.members[0]){
         e.visible = false;
@@ -100,7 +130,7 @@ function postCreate() {
 
     dad.cameras = [cam3];
     bleck.cameras = [cam4];
-    beb.cameras = [cam1];
+    beb.cameras = [camHUD];
 
     window.title = "Now enjoying: " + SONG.meta.name + " By Nominal Dingus";
 }
@@ -117,6 +147,10 @@ function update(elapsed:Float){
     cam3.zoom = camGame.zoom;
     cam2.zoom = camHUD.zoom;
     cam1.zoom = camHUD.zoom;
+
+    if(FlxG.keys.justPressed.F){
+        FlxG.switchState(new MainMenuState());
+    }
 }
 
 //so the shaders dont stay after the songs done and puts you back in the menu
@@ -148,11 +182,11 @@ function fadeTrip(fuck:Float, time:Float){
 }
 
 function tripNOW(){
-    camGame.alpha = 1;
+    beb.alpha = 0;
 }
 
 function noTrip(){
-    camGame.alpha = 0;
+    beb.alpha = 1;
 }
 
 function fuk(){

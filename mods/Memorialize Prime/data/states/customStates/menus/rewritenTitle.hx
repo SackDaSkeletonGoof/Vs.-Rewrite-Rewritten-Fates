@@ -1,7 +1,7 @@
 import funkin.backend.system.framerate.Framerate;
 var transitioning, canPressEnter:Bool = false;
-Framerate.fpsCounter.visible = false;
-Framerate.memoryCounter.visible = false;
+Framerate.fpsCounter.visible = true;
+Framerate.memoryCounter.visible = true;
 Framerate.codenameBuildField.visible = false;
 import flixel.text.FlxTextBorderStyle;
 import funkin.backend.MusicBeatState;
@@ -14,6 +14,12 @@ pls fix it if you can because i honestly dont know what im doing
 
 	- sack
 */
+
+
+
+FlxG.resizeGame(640, 480);
+FlxG.scaleMode.width = 640;
+FlxG.scaleMode.height = 480;
 
 function new() CoolUtil.playMenuSong();
 
@@ -58,9 +64,9 @@ function startIntro()
 		thing = new FlxSprite();
 		thing.frames = Paths.getSparrowAtlas('menus/title');
 		thing.animation.addByPrefix('no', 'rewrTitle', 24, true);
-		thing.scale.set(1.3, 1.3);
-		thing.x = 15;
-		thing.y = -25;
+		thing.scale.set(0.6, 0.6);
+		thing.x = 30;
+		thing.y = 80;
 		thing.updateHitbox();
 		thing.alpha = 0;
 		thing.cameras = [camera];
@@ -78,13 +84,13 @@ function create(){
 
 	trans = new FlxTimer();
 
-	importScript("data/scripts/cool VHS");
-
     window.title = "Vs. Rewrite: Rewriten Fates";
 new FlxTimer().start(1, function(tmr:FlxTimer)
 		{
 			startIntro();
 		});
+
+		importScript("data/scripts/cool VHS");
 
 		FlxG.sound.playMusic(Paths.music('RF - title screen'), 1);
 
@@ -97,7 +103,10 @@ new FlxTimer().start(1, function(tmr:FlxTimer)
 	titleText.frames = Paths.getSparrowAtlas('menus/titlescreen/titleEnter');
 	titleText.animation.addByPrefix('idle', "Press Enter to Begin", 24);
 	titleText.animation.addByPrefix('press', "ENTER PRESSED", 24);
-	titleText.antialiasing = true;
+	titleText.scale.set(0.3, 0.3);
+	titleText.x = 160;
+	titleText.y = 400;
+	titleText.antialiasing = false;
 	titleText.animation.play('idle');
 	titleText.updateHitbox();
 	add(titleText);
@@ -121,8 +130,8 @@ var transitioning:Bool = false;
 function createCoolText(textArray:Array<String>) {
 	for (i => text in textArray) {
 		if (text == "" || text == null) continue;
-		var textShit = new FlxText(0, (i * 90) + 200, FlxG.width, text, 19, true);
-		textShit.setFormat("fonts/NiseSegaSonic.ttf", 60, FlxColor.WHITE, "center", FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		var textShit = new FlxText(0, (i * 50) + 200, FlxG.width, text, 19, true);
+		textShit.setFormat("fonts/NiseSegaSonic.ttf", 30, FlxColor.WHITE, "center", FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		textShit.scrollFactor.set();
 		textShit.screenCenter(FlxAxes.X);
 		textGroup.add(textShit);
@@ -130,8 +139,8 @@ function createCoolText(textArray:Array<String>) {
 }
 
 function addMoreText(text:String) {
-	var moretextShit = new FlxText(0, (textGroup.length * 90) + 200, FlxG.width, text, 19, true);
-	moretextShit.setFormat("fonts/NiseSegaSonic.ttf", 60, FlxColor.WHITE, "center", FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+	var moretextShit = new FlxText(0, (textGroup.length * 50) + 200, FlxG.width, text, 19, true);
+	moretextShit.setFormat("fonts/NiseSegaSonic.ttf", 30, FlxColor.WHITE, "center", FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 	moretextShit.scrollFactor.set();
 	moretextShit.screenCenter(FlxAxes.X);
 	textGroup.add(moretextShit);

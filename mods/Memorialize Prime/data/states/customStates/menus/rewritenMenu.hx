@@ -11,24 +11,31 @@ public var canAccessDebugMenus:Bool = true;
 var thing:FlxSprite;
 var xval:Int = 200;
 
+
+FlxG.resizeGame(640, 480);
+FlxG.scaleMode.width = 640;
+FlxG.scaleMode.height = 480;
+
+function new() CoolUtil.playMenuSong();
+
 function create(){
     FlxG.sound.music.stop();
     trace("ok so, we changed into the main menu, this shit aint good enough");
 
-
     importScript("data/scripts/cool VHS");
-
 
     add(menuItems);
     for (i in 0...optionShit.length)
     {
     var tex = Paths.getSparrowAtlas('menus/main_menu');   
-    var menuItem:FlxSprite = new FlxSprite(xval, 40 + (i * 340));	
-    if (i % 2 == 0) menuItem.x -= -200 + i * 400;
+    var menuItem:FlxSprite = new FlxSprite(xval, -10 + (i * 200));	
+    if (i % 2 == 0) menuItem.x -= -20 + i * 40;
 
     menuItem.frames = tex;
     menuItem.animation.addByPrefix('idle', "main_menu " + optionShit[i], 24);
     menuItem.animation.play('idle');
+    menuItem.x = 10;
+    menuItem.scale.set(0.5, 0.5);
     menuItem.ID = i;
     menuItems.add(menuItem);
     menuItem.scrollFactor.set();
@@ -133,8 +140,7 @@ function goToState()
 		switch (daChoice)
 		{
 			case 'freeplay':
-				FlxG.switchState(new FreeplayState());
-				trace("Freeplay Menu Selected");
+				goToGame();
 
 			case 'credits':
 				FlxG.switchState(new OptionsMenu());
@@ -142,3 +148,8 @@ function goToState()
 
 		}
 	}
+
+    function goToGame(){
+        FlxG.switchState(new PlayState());
+        PlayState.loadSong("Memorialize Prime", "hard");
+    }

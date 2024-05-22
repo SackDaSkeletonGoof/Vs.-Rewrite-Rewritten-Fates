@@ -1,5 +1,6 @@
 import lime.app.Application;
 import lime.graphics.Image;
+import funkin.backend.system.framerate.Framerate;
 
 var sega:FlxTimer;
 
@@ -7,10 +8,18 @@ var bleck:FlxSprite;
 
 var logo:FlxSprite;
 
-function create(){
-    importScript("data/scripts/cool VHS");
-    sega = new FlxTimer();
+Framerate.fpsCounter.visible = true;
+Framerate.memoryCounter.visible = true;
+Framerate.codenameBuildField.visible = false;
 
+
+FlxG.resizeGame(640, 480);
+FlxG.scaleMode.width = 640;
+FlxG.scaleMode.height = 480;
+
+function create(){
+    sega = new FlxTimer();
+    importScript("data/scripts/cool VHS");
     window.title = "Vs. Rewrite: Rewriten Fates - starting up, sit tight!";
     bleck = new FlxSprite();
     bleck.makeSolid(1080 * 10, 1920 * 10, 0xFFFFFFFF);

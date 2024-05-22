@@ -36,4 +36,5 @@ function preStateSwitch() {
 static var redirectStates:Map<FlxState, String> = [
     TitleState => "customStates/menus/rewritenTitle",
     MainMenuState => "customStates/menus/rewritenMenu",
+    FreeplayState => "customStates/menus/rewritenFree"
 ];

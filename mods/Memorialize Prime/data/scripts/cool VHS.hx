@@ -13,7 +13,7 @@ function create(){
     //creates the shader thingies for the thing to work. amazing explanation ik.
     if (FlxG.game._filters == null)
         FlxG.game._filters = [];
-    FlxG.game._filters = [filter, filter2, filter3];
+    FlxG.game._filters = [filter2, filter3];
     vhs.hset("iTime", 0);
 }
 

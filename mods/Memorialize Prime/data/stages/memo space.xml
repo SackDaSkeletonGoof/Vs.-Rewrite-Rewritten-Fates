@@ -1,6 +1,6 @@
 <!DOCTYPE codename-engine-stage>
 <stage zoom="0.55">
-	<dad x="-113" camyoffset="220" camxoffset="100" y="-563"/>
+	<dad x="0" camyoffset="130" camxoffset="0" y="-500"/>
 	<bf x="372.5" y="-361"/>
 	<gf x="5657" y="-177.5"/>
 	<combo x="1079.5" y="123"/>
