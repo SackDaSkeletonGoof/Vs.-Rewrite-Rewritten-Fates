@@ -1,7 +1,9 @@
 import openfl.filters.ShaderFilter;
 import flixel.FlxCamera;
+import flixel.tweens.FlxEase;
+import flixel.tweens.FlxTween.FlxTweenType;
 
-FlxG.resizeGame(320, 240);
+FlxG.resizeGame(640, 480);
 FlxG.scaleMode.width = 640;
 FlxG.scaleMode.height = 480;
 
@@ -20,10 +22,9 @@ var beb:FlxSprite;
 var trip = new CustomShader("idk");
 var lq = new CustomShader("lowquality");
 var vhs = new CustomShader("mosaic");
-var tv = new CustomShader("vcr with no glitch");
-var filter = new ShaderFilter(vhs);
-var filter2 = new ShaderFilter(tv);
-var filter3 = new ShaderFilter(lq);
+var tv = new CustomShader("chromaticWarp");
+var filter = new ShaderFilter(tv);
+var filter2 = new ShaderFilter(lq);
 
 var myArray = ["uuuuuhhhhh", "have you ever did     but then you      so you didnt do     ?", "good thing that there is old code to reuse", "HEY, GO CHECK MY CHANNEL. use the credits thing to do that - Sack", "i have no idea if this will work", "memorialize is a cool song", "there are far too many phrases here.", "guh- *explodes*", "im inside your walls :)"];
 
@@ -37,7 +38,6 @@ function onSubstateClose() window.title = "Now enjoying: " + SONG.meta.name + " 
 
 function create(){
     boyfriend.visible = false;
-    lq.chromaticAberration = 0;
 
     dad.scale.x = 0.5;
     dad.scale.y = 0.5;
@@ -45,10 +45,12 @@ function create(){
     dad.x = 2020;
     dad.y = 0;
 
+    tv.distortion = 0;
+
         //creates the shader thingies for the thing to work. amazing explanation ik.
         if (FlxG.game._filters == null)
             FlxG.game._filters = [];
-        FlxG.game._filters = [filter, filter2, filter3];
+        FlxG.game._filters = [filter, filter2];
         //vhs.hset("iTime", 0);
         vhs.uBlocksize = [2, 2];
 
@@ -59,6 +61,7 @@ function create(){
     shaderfuk();
     black2();
     camGame.addShader(trip);
+    camGame.addShader(vhs);
     camGame.alpha = 1;
     beb.alpha = 1;
 
@@ -197,4 +200,14 @@ function fuk(){
     var v = FlxG.random.int(30,30);
     var h = FlxG.random.int(30,30);
     FlxG.cameras.shake(0.03, 0.2);
+
+    FlxTween.num(5, 0, 0.5, {ease: FlxEase.quadOut}, distort);
+}
+
+function boof(start:Float, end:Float, time:Float){
+    FlxTween.num(start, end, time, {ease: FlxEase.quadOut}, distort);
+}
+
+function distort(val:Float){
+    tv.distortion = val;
 }

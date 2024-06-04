@@ -150,10 +150,26 @@
 		},
 		{
 			"params": [
+				"boof",
+				"3,0,0.4"
+			],
+			"name": "HScript Call",
+			"time": 32000
+		},
+		{
+			"params": [
 				0.08,
 				"camGame"
 			],
 			"name": "Add Camera Zoom",
+			"time": 32666.6666666667
+		},
+		{
+			"params": [
+				"boof",
+				"3,0,0.3"
+			],
+			"name": "HScript Call",
 			"time": 32666.6666666667
 		},
 		{
@@ -166,6 +182,14 @@
 		},
 		{
 			"params": [
+				"boof",
+				"1,0,0.3"
+			],
+			"name": "HScript Call",
+			"time": 33000
+		},
+		{
+			"params": [
 				0.09,
 				"camGame"
 			],
@@ -174,10 +198,26 @@
 		},
 		{
 			"params": [
+				"boof",
+				"3,0,0.3"
+			],
+			"name": "HScript Call",
+			"time": 33166.6666666667
+		},
+		{
+			"params": [
 				0.09,
 				"camGame"
 			],
 			"name": "Add Camera Zoom",
+			"time": 33666.6666666667
+		},
+		{
+			"params": [
+				"boof",
+				"3,0,0.6"
+			],
+			"name": "HScript Call",
 			"time": 33666.6666666667
 		},
 		{
@@ -190,6 +230,14 @@
 		},
 		{
 			"params": [
+				"boof",
+				"3,0,0.6"
+			],
+			"name": "HScript Call",
+			"time": 34000
+		},
+		{
+			"params": [
 				0.09,
 				"camGame"
 			],
@@ -198,10 +246,26 @@
 		},
 		{
 			"params": [
+				"boof",
+				"3,0,0.3"
+			],
+			"name": "HScript Call",
+			"time": 34333.3333333333
+		},
+		{
+			"params": [
 				0.09,
 				"camGame"
 			],
 			"name": "Add Camera Zoom",
+			"time": 34666.6666666667
+		},
+		{
+			"params": [
+				"boof",
+				"3,0,0.7"
+			],
+			"name": "HScript Call",
 			"time": 34666.6666666667
 		},
 		{
@@ -214,6 +278,14 @@
 		},
 		{
 			"params": [
+				"boof",
+				"3,0,0.7"
+			],
+			"name": "HScript Call",
+			"time": 35333.3333333333
+		},
+		{
+			"params": [
 				0.09,
 				"camGame"
 			],
@@ -222,10 +294,26 @@
 		},
 		{
 			"params": [
+				"boof",
+				"3,0,0.4"
+			],
+			"name": "HScript Call",
+			"time": 35833.3333333333
+		},
+		{
+			"params": [
 				0.09,
 				"camGame"
 			],
 			"name": "Add Camera Zoom",
+			"time": 36333.3333333333
+		},
+		{
+			"params": [
+				"boof",
+				"3,0,0.4"
+			],
+			"name": "HScript Call",
 			"time": 36333.3333333333
 		},
 		{
@@ -238,6 +326,14 @@
 		},
 		{
 			"params": [
+				"boof",
+				"3,0,0.2"
+			],
+			"name": "HScript Call",
+			"time": 36666.6666666667
+		},
+		{
+			"params": [
 				0.09,
 				"camGame"
 			],
@@ -246,10 +342,26 @@
 		},
 		{
 			"params": [
+				"boof",
+				"3,0,0.7"
+			],
+			"name": "HScript Call",
+			"time": 36833.3333333333
+		},
+		{
+			"params": [
 				0.09,
 				"camGame"
 			],
 			"name": "Add Camera Zoom",
+			"time": 37333.3333333333
+		},
+		{
+			"params": [
+				"boof",
+				"3,0,0.7"
+			],
+			"name": "HScript Call",
 			"time": 37333.3333333333
 		},
 		{
@@ -262,6 +374,14 @@
 		},
 		{
 			"params": [
+				"boof",
+				"3,0,0.5"
+			],
+			"name": "HScript Call",
+			"time": 38000
+		},
+		{
+			"params": [
 				0.09,
 				"camGame"
 			],
@@ -270,10 +390,26 @@
 		},
 		{
 			"params": [
+				"boof",
+				"3,0,0.5"
+			],
+			"name": "HScript Call",
+			"time": 38500
+		},
+		{
+			"params": [
 				0.09,
 				"camGame"
 			],
 			"name": "Add Camera Zoom",
+			"time": 39000
+		},
+		{
+			"params": [
+				"boof",
+				"3,0,0.4"
+			],
+			"name": "HScript Call",
 			"time": 39000
 		},
 		{
@@ -286,6 +422,14 @@
 		},
 		{
 			"params": [
+				"boof",
+				"3,0,0.4"
+			],
+			"name": "HScript Call",
+			"time": 39333.3333333333
+		},
+		{
+			"params": [
 				0.09,
 				"camGame"
 			],
@@ -294,10 +438,26 @@
 		},
 		{
 			"params": [
+				"boof",
+				"3,0,0.4"
+			],
+			"name": "HScript Call",
+			"time": 39666.6666666667
+		},
+		{
+			"params": [
 				0.09,
 				"camGame"
 			],
 			"name": "Add Camera Zoom",
+			"time": 40000
+		},
+		{
+			"params": [
+				"boof",
+				"3,0,0.7"
+			],
+			"name": "HScript Call",
 			"time": 40000
 		},
 		{
@@ -310,6 +470,14 @@
 		},
 		{
 			"params": [
+				"boof",
+				"3,0,0.5"
+			],
+			"name": "HScript Call",
+			"time": 40666.6666666667
+		},
+		{
+			"params": [
 				0.09,
 				"camGame"
 			],
@@ -318,10 +486,26 @@
 		},
 		{
 			"params": [
+				"boof",
+				"3,0,0.5"
+			],
+			"name": "HScript Call",
+			"time": 41166.6666666667
+		},
+		{
+			"params": [
 				0.09,
 				"camGame"
 			],
 			"name": "Add Camera Zoom",
+			"time": 41666.6666666667
+		},
+		{
+			"params": [
+				"boof",
+				"3,0,0.4"
+			],
+			"name": "HScript Call",
 			"time": 41666.6666666667
 		},
 		{
@@ -334,10 +518,26 @@
 		},
 		{
 			"params": [
+				"boof",
+				"3,0,0.3"
+			],
+			"name": "HScript Call",
+			"time": 42000
+		},
+		{
+			"params": [
 				0.09,
 				"camGame"
 			],
 			"name": "Add Camera Zoom",
+			"time": 42166.6666666667
+		},
+		{
+			"params": [
+				"boof",
+				"3,0,0.5"
+			],
+			"name": "HScript Call",
 			"time": 42166.6666666667
 		},
 		{
@@ -350,10 +550,26 @@
 		},
 		{
 			"params": [
+				"boof",
+				"3,0,0.5"
+			],
+			"name": "HScript Call",
+			"time": 42666.6666666667
+		},
+		{
+			"params": [
 				0.05,
 				"camGame"
 			],
 			"name": "Add Camera Zoom",
+			"time": 43333.3333333333
+		},
+		{
+			"params": [
+				"boof",
+				"3,0,0.4"
+			],
+			"name": "HScript Call",
 			"time": 43333.3333333333
 		},
 		{
@@ -366,6 +582,14 @@
 		},
 		{
 			"params": [
+				"boof",
+				"3,0,0.5"
+			],
+			"name": "HScript Call",
+			"time": 43833.3333333333
+		},
+		{
+			"params": [
 				0.09,
 				"camGame"
 			],
@@ -374,10 +598,26 @@
 		},
 		{
 			"params": [
+				"boof",
+				"3,0,0.3"
+			],
+			"name": "HScript Call",
+			"time": 44333.3333333333
+		},
+		{
+			"params": [
 				0.05,
 				"camGame"
 			],
 			"name": "Add Camera Zoom",
+			"time": 44666.6666666667
+		},
+		{
+			"params": [
+				"boof",
+				"3,0,0.4"
+			],
+			"name": "HScript Call",
 			"time": 44666.6666666667
 		},
 		{
@@ -390,11 +630,27 @@
 		},
 		{
 			"params": [
+				"boof",
+				"3,0,0.4"
+			],
+			"name": "HScript Call",
+			"time": 45000
+		},
+		{
+			"params": [
 				0.09,
 				"camGame"
 			],
 			"time": 45333.3333333333,
 			"name": "Add Camera Zoom"
+		},
+		{
+			"params": [
+				"boof",
+				"3,0,0.8"
+			],
+			"name": "HScript Call",
+			"time": 45333.3333333333
 		},
 		{
 			"params": [
@@ -406,10 +662,26 @@
 		},
 		{
 			"params": [
+				"boof",
+				"3,0,0.5"
+			],
+			"name": "HScript Call",
+			"time": 46000
+		},
+		{
+			"params": [
 				0.09,
 				"camGame"
 			],
 			"name": "Add Camera Zoom",
+			"time": 46500
+		},
+		{
+			"params": [
+				"boof",
+				"3,0,0.4"
+			],
+			"name": "HScript Call",
 			"time": 46500
 		},
 		{
@@ -422,11 +694,27 @@
 		},
 		{
 			"params": [
+				"boof",
+				"3,0,0.3"
+			],
+			"time": 47000,
+			"name": "HScript Call"
+		},
+		{
+			"params": [
 				0.05,
 				"camGame"
 			],
 			"name": "Add Camera Zoom",
 			"time": 47333.3333333333
+		},
+		{
+			"params": [
+				"boof",
+				"3,0,0.2"
+			],
+			"time": 47333.3333333333,
+			"name": "HScript Call"
 		},
 		{
 			"params": [
@@ -438,11 +726,27 @@
 		},
 		{
 			"params": [
+				"boof",
+				"3,0,0.5"
+			],
+			"time": 47500,
+			"name": "HScript Call"
+		},
+		{
+			"params": [
 				0.09,
 				"camGame"
 			],
 			"name": "Add Camera Zoom",
 			"time": 48000
+		},
+		{
+			"params": [
+				"boof",
+				"3,0,0.5"
+			],
+			"time": 48000,
+			"name": "HScript Call"
 		},
 		{
 			"params": [
@@ -454,11 +758,27 @@
 		},
 		{
 			"params": [
+				"boof",
+				"3,0,0.5"
+			],
+			"time": 48666.6666666667,
+			"name": "HScript Call"
+		},
+		{
+			"params": [
 				0.09,
 				"camGame"
 			],
 			"time": 49166.6666666667,
 			"name": "Add Camera Zoom"
+		},
+		{
+			"params": [
+				"boof",
+				"3,0,0.4"
+			],
+			"time": 49166.6666666667,
+			"name": "HScript Call"
 		},
 		{
 			"params": [
@@ -470,6 +790,14 @@
 		},
 		{
 			"params": [
+				"myFunc",
+				"3,0,0.3"
+			],
+			"time": 49666.6666666667,
+			"name": "HScript Call"
+		},
+		{
+			"params": [
 				0.05,
 				"camGame"
 			],
@@ -478,11 +806,27 @@
 		},
 		{
 			"params": [
+				"boof",
+				"3,0,0.3"
+			],
+			"time": 50000,
+			"name": "HScript Call"
+		},
+		{
+			"params": [
 				0.09,
 				"camGame"
 			],
 			"time": 50333.3333333333,
 			"name": "Add Camera Zoom"
+		},
+		{
+			"params": [
+				"boof",
+				"3,0,0.3"
+			],
+			"time": 50333.3333333333,
+			"name": "HScript Call"
 		},
 		{
 			"params": [
@@ -504,10 +848,26 @@
 		},
 		{
 			"params": [
+				"boof",
+				"3,0,0.7"
+			],
+			"name": "HScript Call",
+			"time": 50666.6666666667
+		},
+		{
+			"params": [
 				0.05,
 				"camGame"
 			],
 			"name": "Add Camera Zoom",
+			"time": 51333.3333333333
+		},
+		{
+			"params": [
+				"boof",
+				"0,3,0.6"
+			],
+			"name": "HScript Call",
 			"time": 51333.3333333333
 		},
 		{
@@ -535,6 +895,14 @@
 			],
 			"name": "Camera Flash",
 			"time": 52000
+		},
+		{
+			"params": [
+				"boof",
+				"3,0,0.1"
+			],
+			"name": "HScript Call",
+			"time": 52666.6666666667
 		},
 		{
 			"params": [
@@ -7055,19 +7423,19 @@
 					"type": 0
 				}
 			],
+			"position": "boyfriend",
+			"strumScale": 0.6,
 			"visible": true,
+			"type": 1,
+			"characters": [
+				"boofe"
+			],
 			"strumPos": [
 				0,
 				50
 			],
-			"position": "boyfriend",
-			"strumScale": 0.6,
-			"vocalsSuffix": "",
 			"strumLinePos": 0.75,
-			"type": 1,
-			"characters": [
-				"boofe"
-			]
+			"vocalsSuffix": ""
 		}
 	],
 	"codenameChart": true,
