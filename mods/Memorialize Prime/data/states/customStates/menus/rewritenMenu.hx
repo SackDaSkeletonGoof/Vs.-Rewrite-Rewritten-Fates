@@ -8,7 +8,7 @@ var menuItems = new FlxTypedGroup();
 var optionShit:Array<String> = ['freeplay', 'credits'];
 var curSelected:Int = 0;
 public var canAccessDebugMenus:Bool = true;
-var thing:FlxSprite;
+var ring:FlxSprite = new FlxSprite();	
 var xval:Int = 200;
 
 
@@ -41,23 +41,30 @@ function create(){
     menuItem.scrollFactor.set();
     menuItem.antialiasing = false;
     }
+
+    ring.frames = Paths.getSparrowAtlas('menus/ring'); 
+    ring.animation.addByPrefix('idle', "ring_spin", 24);
+    ring.animation.play('idle');
+    ring.alpha = 0.001;
+    add(ring);
 }
 
 
 function update(){
+    
     if (FlxG.keys.justPressed.ESCAPE)
-        {
-            FlxG.switchState(new TitleState());
-        }
+    {
+        FlxG.switchState(new TitleState());
+    }
     if (controls.UP_P)
-        {
-            changeItem(-1);
-        }
+    {
+        changeItem(-1);
+    }
 
-        if (controls.DOWN_P)
-        {
-           changeItem(1);
-        }
+    if (controls.DOWN_P)
+    {
+        changeItem(1);
+    }
     if (FlxG.keys.justPressed.F){
         FlxG.switchState(new FreeplayState());
     }
@@ -122,15 +129,17 @@ function changeItem(huh:Int = 0)
 			if (curSelected < 0)
 				curSelected = menuItems.length - 1;
 
+
 		menuItems.forEach(function(spr:FlxSprite)
 		{
 			spr.animation.play('idle');
 			if (spr.ID == curSelected )
 			{
-				spr.x + 2;
+                ring.y = spr.y + 100;
+                ring.alpha = 1;
 			}
 
-			spr.updateHitbox();
+			//spr.updateHitbox();
 		});
 	}
 
