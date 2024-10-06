@@ -20,8 +20,15 @@ import flixel.effects.FlxFlicker;
 	var shader = new CustomShader('vhsBuffer');
 	var shader2 = new CustomShader('vhsBuffer2'); var shader3 = new CustomShader('vhs');
 
+	FlxG.resizeGame(640, 480);
+	FlxG.scaleMode.width = 640;
+	FlxG.scaleMode.height = 480;
+
+
 	function create()
 	{
+		importScript("data/scripts/cool VHS");
+
 		FlxG.sound.playMusic(Paths.music(null),1);
 		somethingSelected = false;
 
@@ -32,7 +39,7 @@ import flixel.effects.FlxFlicker;
 		bgRewrite = new FlxSprite(0,-480).loadGraphic(Paths.image('menus/mainmenu/alt_thing'));
 		add(bgRewrite);
 		bgRewrite.alpha = 0;
-		bgRewrite.scale.set(1.4,1.5);
+		bgRewrite.scale.set(0.9,1);
 		bgRewrite.scrollFactor.set();
 		bgRewrite.screenCenter(FlxAxes.X);
 		bgRewrite.antialiasing = true;
@@ -43,14 +50,14 @@ import flixel.effects.FlxFlicker;
 			menuItem = new FlxSprite(0,0).loadGraphic(Paths.image('menus/mainmenu/' + option));
 			menuItem.ID = i;
 			menuOptions.add(menuItem);
-			menuItem.scale.set(0.4,0.4);
+			menuItem.scale.set(0.25,0.25);
 			menuItem.alpha = 0;
 			menuItem.scrollFactor.set();
 			menuItem.antialiasing = true;
 		}
 
-		menuOptions.members[0].setPosition(-700, -350); menuOptions.members[1].setPosition(70, -350);
-		menuOptions.members[2].setPosition(-700, -130); menuOptions.members[3].setPosition(70, -130);
+		menuOptions.members[0].setPosition(-820, -420); menuOptions.members[1].setPosition(-450, -420);
+		menuOptions.members[2].setPosition(-820, -260); menuOptions.members[3].setPosition(-450, -260);
 
 		FlxG.camera.follow(camFollow, null, 0.06);
 
@@ -59,7 +66,7 @@ import flixel.effects.FlxFlicker;
 		new FlxTimer().start(3, function(tmr:FlxTimer)
 		{
 			FlxTween.tween(bgRewrite, {alpha: 1}, 1.5);
-			FlxTween.tween(bgRewrite, {y: 150}, 5.3, {ease: FlxEase.sineOut, onComplete: function()
+			FlxTween.tween(bgRewrite, {y: 10}, 5.3, {ease: FlxEase.sineOut, onComplete: function()
 				{
 					FlxTween.tween(menuOptions.members[0], {alpha: 1}, 1.5);
 					FlxTween.tween(menuOptions.members[1], {alpha: 1}, 1.5);
@@ -86,7 +93,7 @@ import flixel.effects.FlxFlicker;
 				changeItem();
 				
 				bgRewrite.alpha = 1;
-				bgRewrite.y = 150;
+				bgRewrite.y = 10;
 
 				new FlxTimer().start(0.5, function(tmr:FlxTimer)
 				{
