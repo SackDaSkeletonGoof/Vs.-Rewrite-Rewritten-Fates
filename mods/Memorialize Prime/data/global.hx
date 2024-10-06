@@ -1,40 +1,16 @@
-import funkin.backend.utils.NativeAPI;
-import funkin.backend.utils.ShaderResizeFix;
-import funkin.backend.system.Main;
-import openfl.system.Capabilities;
+import funkin.backend.assets.ModsFolder;
 import lime.graphics.Image;
+import sys.io.File;
 
-function update(elapsed) {
-    if (FlxG.keys.justPressed.F6)
-        NativeAPI.allocConsole();
-    if (FlxG.keys.justPressed.F5)
-        FlxG.resetState();
-}
-
-function create(){
-    window.setIcon(Image.fromBytes(Assets.getBytes(Paths.image('testing/ringy'))));
-}
-
-static var initialized:Bool = false;
+static var redirectStates:Map<FlxState, String> = [
+    MainMenuState => "menus/rewriteMainMenuState",
+];
 
 function preStateSwitch() {
-    FlxG.camera.bgColor = 0xFF000000;
+    window.title = "VS Rewrite: Rewritten Files";
+    //window.setIcon(Image.fromBytes(File.getBytes('mods/' + ModsFolder.currentModFolder + '/images/icon.png')));
 
-	if (!initialized){
-		initialized = true;
-		FlxG.game._requestedState = new ModState('customStates/WarningState');
-    }else 
     for (redirectState in redirectStates.keys())
         if (FlxG.game._requestedState is redirectState)
             FlxG.game._requestedState = new ModState(redirectStates.get(redirectState));
 }
-
-
-
-
-
-static var redirectStates:Map<FlxState, String> = [
-    TitleState => "customStates/menus/rewritenTitle",
-    MainMenuState => "customStates/menus/rewritenMenu",
-    //FreeplayState => "customStates/menus/rewritenFree"
-];
