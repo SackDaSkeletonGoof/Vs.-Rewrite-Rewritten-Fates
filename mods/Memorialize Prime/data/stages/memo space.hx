@@ -2,10 +2,14 @@ import openfl.filters.ShaderFilter;
 import flixel.FlxCamera;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween.FlxTweenType;
+import funkin.backend.utils.ShaderResizeFix;
 
-FlxG.resizeGame(640, 480);
-FlxG.scaleMode.width = 640;
-FlxG.scaleMode.height = 480;
+/*
+*FlxG.resizeWindow(640, 360);
+*FlxG.resizeGame(1280, 720);
+*FlxG.scaleMode.width = 1280;
+*FlxG.scaleMode.height = 720;
+*/
 
 //cameras. quite easy to understand.
 var cam1 = null;
@@ -32,6 +36,8 @@ var myIndex = Math.floor(Math.random()*myArray.length);
 
 var mySelection = myArray[myIndex];
 
+ShaderResizeFix.doResizeFix = true;
+
 
 function onSubstateOpen() window.title = mySelection; trace(mySelection);
 function onSubstateClose() window.title = "Now enjoying: " + SONG.meta.name + " By Nominal Dingus";
@@ -39,18 +45,18 @@ function onSubstateClose() window.title = "Now enjoying: " + SONG.meta.name + " 
 function create(){
     boyfriend.visible = false;
 
-    dad.scale.x = 0.5;
-    dad.scale.y = 0.5;
+    dad.scale.x = 0.8;
+    dad.scale.y = 0.8;
 
-    dad.x = 2020;
-    dad.y = 0;
+    dad.x = 1850;
+    dad.y = 10;
 
     tv.distortion = 0;
 
         //creates the shader thingies for the thing to work. amazing explanation ik.
         if (FlxG.game._filters == null)
             FlxG.game._filters = [];
-        FlxG.game._filters = [filter, filter2];
+        FlxG.game._filters = [filter];
         //vhs.hset("iTime", 0);
         vhs.uBlocksize = [2, 2];
 
@@ -111,13 +117,13 @@ function black2(){
 function postCreate() {
     for(s in strumLines.members[1]) {
         s.cameras = [cam2];
-        playerStrums.members[0].x = 90;
-        playerStrums.members[1].x = 170;
-        playerStrums.members[2].x = 390;
-        playerStrums.members[3].x = 460;
+        playerStrums.members[0].x = 430;
+        playerStrums.members[1].x = 530;
+        playerStrums.members[2].x = 690;
+        playerStrums.members[3].x = 790;
     }
     
-    var nen = 10;
+    var nen = 120;
     
     playerStrums.members[0].y = nen;
     playerStrums.members[1].y = nen;

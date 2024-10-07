@@ -34,5 +34,5 @@ function create(){
     logo.screenCenter(FlxAxes.Y);
     add(logo);
 
-    sega.start(1.0, () -> {FlxG.sound.play(Paths.sound('startUp'), 1); new FlxTimer().start(3.0, () -> FlxG.switchState(new ModState("customStates/menus/rewritenTitle")));});
+    sega.start(1.0, () -> {FlxG.sound.play(Paths.sound('startUp'), 1); new FlxTimer().start(3.0, () -> FlxG.switchState(new ModState("menus/rewriteMainMenuState")));});
 }

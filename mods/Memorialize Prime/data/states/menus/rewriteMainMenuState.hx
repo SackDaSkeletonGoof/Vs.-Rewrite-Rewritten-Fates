@@ -17,9 +17,6 @@ import flixel.effects.FlxFlicker;
 	
 	var canMove:Bool = false;
 
-	var shader = new CustomShader('vhsBuffer');
-	var shader2 = new CustomShader('vhsBuffer2'); var shader3 = new CustomShader('vhs');
-
 	FlxG.resizeGame(640, 480);
 	FlxG.scaleMode.width = 640;
 	FlxG.scaleMode.height = 480;
@@ -29,7 +26,7 @@ import flixel.effects.FlxFlicker;
 	{
 		importScript("data/scripts/cool VHS");
 
-		FlxG.sound.playMusic(Paths.music(null),1);
+		FlxG.sound.playMusic(Paths.music('untitled'), 1);
 		somethingSelected = false;
 
 		menuOptions = new FlxTypedGroup();
@@ -148,10 +145,6 @@ import flixel.effects.FlxFlicker;
 				selectItem();
 			}
 		}
-
-		shader.iTime = elapsed;
-		shader2.iTime = elapsed;
-		shader3.iTime = elapsed;
 	}
 
 	function changeItem()
