@@ -24,11 +24,12 @@ var beb:FlxSprite;
 
 //this is the shader variable list.
 var trip = new CustomShader("idk");
-var lq = new CustomShader("lowquality");
-var vhs = new CustomShader("mosaic");
-var tv = new CustomShader("chromaticWarp");
-var filter = new ShaderFilter(tv);
-var filter2 = new ShaderFilter(lq);
+var visualWarp = new CustomShader("hotlineVHS");
+var lowQ = new CustomShader("lowquality");
+var warp = new CustomShader("chromaticWarp");
+var filter3 = new ShaderFilter(visualWarp);
+var filter2 = new ShaderFilter(lowQ);
+var filter = new ShaderFilter(warp);
 
 var myArray = ["uuuuuhhhhh", "have you ever did     but then you      so you didnt do     ?", "good thing that there is old code to reuse", "HEY, GO CHECK MY CHANNEL. use the credits thing to do that - Sack", "i have no idea if this will work", "memorialize is a cool song", "there are far too many phrases here.", "guh- *explodes*", "im inside your walls :)"];
 
@@ -48,17 +49,17 @@ function create(){
     dad.scale.x = 0.8;
     dad.scale.y = 0.8;
 
-    dad.x = 1850;
-    dad.y = 10;
+    visualWarp.hset("iTime", 0);
+    trip.hset("iTime", 0);
 
-    tv.distortion = 0;
+    dad.screenCenter();
+    trace(dad.x + "< X Axis for Prime| " + dad.y + "< Y Axis for Prime|");
 
-        //creates the shader thingies for the thing to work. amazing explanation ik.
-        if (FlxG.game._filters == null)
-            FlxG.game._filters = [];
-        FlxG.game._filters = [filter];
-        //vhs.hset("iTime", 0);
-        vhs.uBlocksize = [2, 2];
+    warp.distortion = 0;
+
+    if (FlxG.game._filters == null)
+        FlxG.game._filters = [];
+    FlxG.game._filters = [filter, filter3, filter2];
 
     //for any song that you want to have
     //a fade into the game you can do a thing like this.
@@ -67,7 +68,6 @@ function create(){
     shaderfuk();
     black2();
     camGame.addShader(trip);
-    camGame.addShader(vhs);
     camGame.alpha = 1;
     beb.alpha = 1;
 
@@ -117,10 +117,10 @@ function black2(){
 function postCreate() {
     for(s in strumLines.members[1]) {
         s.cameras = [cam2];
-        playerStrums.members[0].x = 430;
-        playerStrums.members[1].x = 530;
-        playerStrums.members[2].x = 690;
-        playerStrums.members[3].x = 790;
+        playerStrums.members[0].x = 360;
+        playerStrums.members[1].x = 460;
+        playerStrums.members[2].x = 720;
+        playerStrums.members[3].x = 820;
     }
     
     var nen = 120;
@@ -135,7 +135,10 @@ function postCreate() {
         e.visible = false;
     }
 
+    trace(cam3.x + "< X Axist for cam3|" + cam3.y + "< Y Axis for cam3|");
 
+    cam3.x = 0;
+    cam3.y = 0;
 
     dad.cameras = [cam3];
     bleck.cameras = [cam4];
@@ -146,6 +149,7 @@ function postCreate() {
 var time:Float = 0;
 function update(elapsed:Float){
     trip.hset("iTime", time += elapsed);
+    visualWarp.hset("iTime", time += elapsed);
 
     for (i in [missesTxt, accuracyTxt, scoreTxt, healthBar,healthBarBG, iconP2, iconP1]) i.visible = false;
 
@@ -156,10 +160,6 @@ function update(elapsed:Float){
     cam3.zoom = camGame.zoom;
     cam2.zoom = camHUD.zoom;
     cam1.zoom = camHUD.zoom;
-
-    if(FlxG.keys.justPressed.F){
-        FlxG.switchState(new MainMenuState());
-    }
 }
 
 //so the shaders dont stay after the songs done and puts you back in the menu
@@ -215,5 +215,5 @@ function boof(start:Float, end:Float, time:Float){
 }
 
 function distort(val:Float){
-    tv.distortion = val;
+    warp.distortion = val;
 }

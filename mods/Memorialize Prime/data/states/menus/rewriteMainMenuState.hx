@@ -22,7 +22,7 @@ function create()
 {
 	importScript("data/scripts/cool VHS");
 
-	FlxG.sound.playMusic(Paths.music(null),1);
+	FlxG.sound.playMusic(Paths.music('untitled'),1);
 	somethingSelected = false;
 
 	bgRewrite = new FlxSprite(0,-480).loadGraphic(Paths.image('menus/mainmenu/alt_thing'));
