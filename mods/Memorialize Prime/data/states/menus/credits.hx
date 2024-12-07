@@ -17,8 +17,8 @@ function create(){
     FlxG.sound.playMusic(Paths.music('untitled'), 1);
     trace("if any one sees this. dw bout it, i was just messing around with the mod");
 
-    var textShit = new FlxText(0, 200, FlxG.width, "Freeplay Gonna be good when V1 comes out\n\n Please press [Enter]\n to play Memorialize Prime\n By Nominal Dingus\n 
-    - Sack The Skeleton goof,\n Rewrite Prime's Co-Owner", 14, true);
+    var textShit = new FlxText(0, 200, FlxG.width, "Credits Gonna be cool once V1 comes out\n Shit made by a bunch of dumbasses.\n\n
+    Thanks For playing - \nSack The Skeleton goof,\n Rewrite Prime's Co-Owner", 14, true);
 	textShit.setFormat("fonts/Century.ttf", 20, FlxColor.WHITE, "center", FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 	textShit.scrollFactor.set();
     textShit.y = balls;
@@ -30,13 +30,4 @@ function update(){
     if(FlxG.keys.justPressed.ESCAPE){
         FlxG.switchState(new MainMenuState());
     }
-
-    if(FlxG.keys.justPressed.ENTER){
-        goToGame();
-    }
-}
-
-function goToGame(){
-    FlxG.switchState(new PlayState());
-    PlayState.loadSong("Memorialize Prime", "hard");
 }

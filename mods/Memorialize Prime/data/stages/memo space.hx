@@ -123,7 +123,7 @@ function postCreate() {
         playerStrums.members[3].x = 820;
     }
     
-    var nen = 120;
+    var nen = 90;
     
     playerStrums.members[0].y = nen;
     playerStrums.members[1].y = nen;
@@ -135,10 +135,6 @@ function postCreate() {
         e.visible = false;
     }
 
-    trace(cam3.x + "< X Axist for cam3|" + cam3.y + "< Y Axis for cam3|");
-
-    cam3.x = 0;
-    cam3.y = 0;
 
     dad.cameras = [cam3];
     bleck.cameras = [cam4];

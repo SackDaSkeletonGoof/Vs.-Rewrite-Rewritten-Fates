@@ -175,10 +175,10 @@ function selectItem() {
 	
 	new FlxTimer().start(1, function(tmr:FlxTimer)
 		{
-			if (hoveringOption[0] == 0 && hoveringOption[1] == 0) FlxG.switchState(new StoryMenuState());
+			if (hoveringOption[0] == 0 && hoveringOption[1] == 0) FlxG.switchState(new ModState("menus/primeStory"));
 			if (hoveringOption[0] == 1 && hoveringOption[1] == 0) FlxG.switchState(new OptionsMenu());
-			if (hoveringOption[0] == 0 && hoveringOption[1] == 1) FlxG.switchState(new FreeplayState());
-			if (hoveringOption[0] == 1 && hoveringOption[1] == 1) FlxG.switchState(new CreditsMain());
+			if (hoveringOption[0] == 0 && hoveringOption[1] == 1) FlxG.switchState(new ModState("customStates/menus/rewritenFree"));
+			if (hoveringOption[0] == 1 && hoveringOption[1] == 1) FlxG.switchState(new ModState("menus/credits"));
 	});
 }
 	
